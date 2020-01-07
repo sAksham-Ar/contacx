@@ -37,7 +37,7 @@ def search1():
            Category=form.Category.data
            con=mysql.connect
            c= con.cursor()
-           x=c.execute("SELECT * FROM contacts WHERE %s LIKE '%s'"%(str(Category),str(Value)))
+           x=c.execute("SELECT * FROM contacts WHERE %s = '%s'"%(Category,str(Value)))
            if int(x)>0:
                   con.commit()
                   return render_template("result.html",r=c.fetchall())
