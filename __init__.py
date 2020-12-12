@@ -86,7 +86,7 @@ def register_page():
                     return render_template('register.html', form=form)
 
              else:
-                    c.execute("INSERT INTO contacts (Name,Number,Hall,Department,Year) VALUES (%s, %s, %s, %s, %s)",(Name, int(Number),Hall, Department, Year))
+                    c.execute("INSERT INTO contacts (Name,Number,Hall,Department,Year) VALUES (%s, %s, %s, %s, %s)",(Name, Number,Hall, Department, Year))
                     con.commit()
                     flash("Thanks for adding the contact!")
                     c.close()
